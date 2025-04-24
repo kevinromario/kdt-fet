@@ -1,0 +1,68 @@
+@use './variables' as var;
+
+.pricing {
+  padding: 100px;
+  text-align: center;
+
+  @media (max-width: 1155px) {
+    padding: 20px;
+    padding-top: 70px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+    color: var.$blue;
+    margin-bottom: 30px;
+
+    @media (min-width: 1441px) {
+      font-size: 60px;
+    }
+
+    @media (max-width: 426px) {
+      font-size: 30px;
+    }
+  }
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+
+  th,
+  td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: var.$blue;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  td {
+    &:first-child {
+      text-align: left;
+      font-weight: bold;
+    }
+
+    &:not(:first-child) {
+      min-width: 150px;
+    }
+  }
+}
