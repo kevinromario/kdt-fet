@@ -109,6 +109,48 @@ nav {
     display: flex;
     gap: 2rem;
     align-items: center;
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: var.$black;
+      z-index: 1001;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 550px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: var.$white;
+        flex-direction: column;
+        justify-content: center;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-toggle:checked ~ .nav-links {
+        right: 0;
+      }
+    }
+
     a {
       text-decoration: none;
       color: var.$black;
