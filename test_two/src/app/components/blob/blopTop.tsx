@@ -1,6 +1,11 @@
-export const BlopTop = () => {
+import { headers } from 'next/headers';
+
+export const BlopTop = async () => {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '/';
+  const isHome = pathname === '/';
   return (
-    <div className="blob-top-left">
+    <div className={isHome ? 'blob-top-left' : 'display-none'}>
       <svg
         viewBox="0 0 600 400"
         xmlns="http://www.w3.org/2000/svg"
