@@ -1,0 +1,34 @@
+.blob-top-left {
+  position: fixed;
+  top: -190px;
+  left: -160px;
+  z-index: -1;
+  pointer-events: none;
+  transform: rotate(110deg);
+  .blob-bg {
+    width: 600px;
+    height: 400px;
+  }
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.blob-bottom-right {
+  position: fixed;
+  bottom: -800px;
+  right: -500px;
+  z-index: -1;
+  pointer-events: none;
+
+  @media (max-width: 610px) {
+    display: none;
+  }
+
+  svg,
+  img {
+    width: 1500px;
+    height: 1500px;
+  }
+}
