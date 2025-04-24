@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'About - ERP Solution',
-  description: 'Pelajari lebih lanjut tentang misi dan visi ERP kami.',
+  description: 'Pelajari lebih lanjut tentang ERP.',
 };
 
 export default function AboutPage() {
