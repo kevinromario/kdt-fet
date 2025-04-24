@@ -1,11 +1,6 @@
-import { headers } from 'next/headers';
-
 export const BlopBottom = async () => {
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname') || '/';
-  const isHome = pathname === '/';
   return (
-    <div className={isHome ? 'blob-bottom-right' : 'display-none'}>
+    <div className={'blob-bottom-right'}>
       <svg viewBox="0 0 200 200">
         <defs>
           <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
