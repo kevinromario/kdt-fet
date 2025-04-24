@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use './variables.scss' as var;
 
 nav {
   display: flex;
@@ -7,6 +7,42 @@ nav {
   padding: 1rem 2rem;
   font-weight: bold;
 
+  &.nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var.$white;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .nav-left {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: var.$black;
+        &:hover {
+          color: var.$blue;
+          transition: color 0.5s ease;
+        }
+        .logo {
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 25px solid var.$blue;
+          transform: rotate(60deg);
+          position: relative;
+          top: -5px;
+          left: 5px;
+        }
+      }
+    }
+  }
+
   .nav-left {
     a {
       display: flex;
@@ -14,9 +50,9 @@ nav {
       gap: 0.5rem;
       text-decoration: none;
       font-weight: bold;
-      color: $white;
+      color: var.$white;
       &:hover {
-        color: $blue;
+        color: var.$blue;
         transition: color 0.5s ease;
       }
       .logo {
@@ -24,11 +60,47 @@ nav {
         height: 0;
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
-        border-bottom: 25px solid $white;
+        border-bottom: 25px solid var.$white;
         transform: rotate(60deg);
         position: relative;
         top: -5px;
         left: 5px;
+      }
+    }
+  }
+
+  @media (max-width: 980px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var.$white;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .nav-left {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: var.$black;
+        &:hover {
+          color: var.$blue;
+          transition: color 0.5s ease;
+        }
+        .logo {
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 25px solid var.$blue;
+          transform: rotate(60deg);
+          position: relative;
+          top: -5px;
+          left: 5px;
+        }
       }
     }
   }
@@ -39,23 +111,23 @@ nav {
     align-items: center;
     a {
       text-decoration: none;
-      color: $black;
+      color: var.$black;
 
       &:hover {
-        color: $blue;
+        color: var.$blue;
         transition: color 0.3s ease;
       }
 
       &.login-btn {
         padding: 0.4rem 0.8rem;
         border-radius: 5px;
-        border: 3px solid $blue;
-        color: $blue;
+        border: 3px solid var.$blue;
+        color: var.$blue;
 
         &:hover {
-          background-color: $blue;
-          color: $white;
-          border: 3px solid $blue;
+          background-color: var.$blue;
+          color: var.$white;
+          border: 3px solid var.$blue;
           transition: all 0.3s ease;
         }
       }
