@@ -3,7 +3,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   padding: 32px;
 
   @media (max-width: 426px) {
@@ -29,6 +29,11 @@
         font-size: 40px;
         color: var.$blue;
         margin-bottom: 16px;
+
+        @media (min-width: 1441px) {
+          font-size: 60px;
+        }
+
         @media (max-width: 426px) {
           font-size: 30px;
         }
@@ -36,6 +41,9 @@
       p {
         font-size: 17.6px;
         color: #333;
+        @media (min-width: 1441px) {
+          font-size: 30px;
+        }
       }
     }
   }
@@ -47,6 +55,12 @@
     color: #777;
     margin-left: 100;
 
+    @media (min-width: 1441px) {
+      text-align: center;
+      margin-left: 0;
+      font-size: 30px;
+    }
+
     @media (max-width: 1230px) {
       text-align: center;
       margin-left: 0;
@@ -57,6 +71,11 @@
     margin-left: 100;
     display: flex;
     justify-content: flex-start;
+
+    @media (min-width: 1441px) {
+      justify-content: center;
+      margin-left: 0;
+    }
 
     @media (max-width: 1230px) {
       justify-content: center;
@@ -71,9 +90,9 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  //   @media (max-height: 768px) {
-  //     display: none;
-  //   }
+  @media (min-width: 1441px) {
+    max-width: 1040px;
+  }
 
   video {
     width: 100%;
