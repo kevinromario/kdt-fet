@@ -1,7 +1,13 @@
+import { headers } from 'next/headers';
+
 /* eslint-disable @next/next/no-html-link-for-pages */
-export const Header = () => {
+export const Header = async () => {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '/';
+  const isHome = pathname === '/';
+
   return (
-    <nav>
+    <nav className={isHome ? '' : 'nav-fixed'}>
       <div className="nav-left">
         <a href="/">
           <div className="logo" />
