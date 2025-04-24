@@ -1,0 +1,64 @@
+@import './variables.scss';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-weight: bold;
+
+  .nav-left {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: $white;
+      &:hover {
+        color: $blue;
+        transition: color 0.5s ease;
+      }
+      .logo {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 25px solid $white;
+        transform: rotate(60deg);
+        position: relative;
+        top: -5px;
+        left: 5px;
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $blue;
+        transition: color 0.3s ease;
+      }
+
+      &.login-btn {
+        padding: 0.4rem 0.8rem;
+        border-radius: 5px;
+        border: 3px solid $blue;
+        color: $blue;
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+          border: 3px solid $blue;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+}
