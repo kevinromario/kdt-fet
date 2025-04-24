@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use './variables.scss' as var;
+
+.login {
+  padding: 100px;
+  text-align: center;
+
+  @media (max-width: 1155px) {
+    padding: 20px;
+    padding-top: 70px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+    color: var.$blue;
+    margin-bottom: 30px;
+
+    @media (min-width: 1441px) {
+      font-size: 60px;
+    }
+
+    @media (max-width: 426px) {
+      font-size: 30px;
+    }
+  }
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  width: 400px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.button-login {
+  padding: 0.8rem 1.5rem;
+  background-color: var.$blue;
+  color: var.$white;
+  border-radius: 5px;
+  border-color: var.$white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: color.scale(var.$blue, $lightness: -20%);
+  }
+}
+
+.input-form {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var.$blue;
+    box-shadow: 0 0 0 2px rgba(var.$blue, 0.2);
+  }
+}
